@@ -1,0 +1,37 @@
+/*
+* _useragent
+*/
+
+.no-script {
+	background-color: $alert-box;
+	font-color: $alert-box-font-color;
+
+	p {
+		margin: 0;
+		padding: 0;
+
+		&::before {
+			content: "\e600"; /* from _icons.scss */
+			margin-right: px2em(15px);
+		}
+	}
+}
+.user-agent {
+	background-color: $alert-box;
+	font-color: $alert-box-font-color;
+
+	p {
+		margin: 0;
+		padding: 0;
+
+		&::before {
+			content: "\e601"; /* from _icons.scss */
+			margin-right: px2em(15px);
+
+			a {
+				text-decoration: none;
+				/*color: $grey-bkgd-color;*/
+			}
+		}
+	}
+}

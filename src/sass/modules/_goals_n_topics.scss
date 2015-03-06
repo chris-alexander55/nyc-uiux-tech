@@ -1,0 +1,107 @@
+/*
+* _goals_n_topics
+*/
+
+.goals-n-topics {
+	.goals {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+
+		@include mobile {
+			
+		}
+		@include mobile-retina {
+
+		}
+		@include tablet {
+
+		}
+		@include tablet-retina {
+
+		}
+		@include desktop {
+			width: 50%;
+			float: left;
+
+			li {
+				padding: 0;
+				margin: 0 px2em(10px) 0 0;
+				color: #748592;
+				font: bold px2em(30px) 'Signika', sans-serif;
+			}
+		}
+		@include desktop-retina {
+
+		}
+		@include display {
+
+		}
+		@include display-retina {
+
+		}
+	}
+	.topics {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		
+		@include mobile {
+			
+		}
+		@include mobile-retina {
+
+		}
+		@include tablet {
+
+		}
+		@include tablet-retina {
+
+		}
+		@include desktop {
+			width: 50%;
+			float: left;
+
+			li {
+				padding: 0;
+				margin: 0 0 0 px2em(20px);
+			}
+		}
+		@include desktop-retina {
+
+		}
+		@include display {
+
+		}
+		@include display-retina {
+
+		}
+	}
+	.mediahelper {
+		@include mobile {
+			display: none;
+		}
+		@include mobile-retina {
+			display: none;
+		}
+		@include tablet {
+			display: inherit;
+		}
+		@include tablet-retina {
+			display: inherit;
+		}
+		@include desktop {
+			display: inherit;
+		}
+		@include desktop-retina {
+			display: inherit;
+		}
+		@include display {
+			display: inherit;
+		}
+		@include display-retina {
+			display: inherit;
+		}
+	}
+}

@@ -1,0 +1,247 @@
+/*
+* _mixins
+*/
+
+/* FUNCTIONS */
+
+/**
+@function px2em
+Returns em value
+@param pxval - pixel value
+Usage: @include px2em(120px)
+**/
+@function px2em($pxval) {
+	@return ($pxval/$baseline)+0em;
+}
+
+/* MIXINS */
+
+/**
+@mixin bp-hint
+Sets content indicating the currently applied media query.
+Usage: @include bp-hint('tablet-landscape')
+**/
+@mixin bp-hint($name) {
+	&::after {
+		content: $name;
+		display: none;
+	}
+}
+
+/**
+@mixin mobile
+Sets content for mobile screen widths.
+Usage: @include mobile { attribute: value }
+**/
+@mixin mobile {
+	@media only screen and (min-width: #{$mobile-min-break}) {
+		@content;
+	}
+}
+
+/**
+@mixin mobile-retina
+Sets content for mobile retina screen widths.
+Usage: @include mobile-retina { attribute: value }
+**/
+@mixin mobile-retina {
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: #{$mobile-min-break}),
+	only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: #{$mobile-min-break}),
+	only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: #{$mobile-min-break}),
+	only screen and (        min-device-pixel-ratio: 2)      and (min-width: #{$mobile-min-break}),
+	only screen and (                min-resolution: 192dpi) and (min-width: #{$mobile-min-break}),
+	only screen and (                min-resolution: 2dppx)  and (min-width: #{$mobile-min-break}) { 
+	  @content;
+	}
+}
+
+/**
+@mixin tablet
+Sets content for tablet screen widths.
+Usage: @include tablet { attribute: value }
+**/
+@mixin tablet {
+	@media only screen and (min-width: #{$tablet-min-break}) and (max-width: #{$tablet-max-break}) {
+		@content;
+	}
+}
+
+/**
+@mixin tablet-retina
+Sets content for tablet retina screen widths.
+Usage: @include tablet-retina { attribute: value }
+**/
+@mixin tablet-retina {
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: #{$tablet-min-break}) and (max-width: #{$tablet-max-break}),
+	only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: #{$tablet-min-break}) and (max-width: #{$tablet-max-break}),
+	only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: #{$tablet-min-break}) and (max-width: #{$tablet-max-break}),
+	only screen and (        min-device-pixel-ratio: 2)      and (min-width: #{$tablet-min-break}) and (max-width: #{$tablet-max-break}),
+	only screen and (                min-resolution: 192dpi) and (min-width: #{$tablet-min-break}) and (max-width: #{$tablet-max-break}),
+	only screen and (                min-resolution: 2dppx)  and (min-width: #{$tablet-min-break}) and (max-width: #{$tablet-max-break}) { 
+	  @content;
+	}
+}
+
+/**
+@mixin desktop
+Sets content for desktop screen widths.
+Usage: @include desktop { attribute: value }
+**/
+@mixin desktop {
+	@media only screen and (min-width: #{$desktop-min-break}) and (max-width: #{$desktop-max-break}) {
+		@content;
+	}
+}
+
+/**
+@mixin desktop-retina
+Sets content for desktop retina screen widths.
+Usage: @include desktop-retina { attribute: value }
+**/
+@mixin desktop-retina {
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: #{$desktop-min-break}) and (max-width: #{$desktop-max-break}),
+	only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: #{$desktop-min-break}) and (max-width: #{$desktop-max-break}),
+	only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: #{$desktop-min-break}) and (max-width: #{$desktop-max-break}),
+	only screen and (        min-device-pixel-ratio: 2)      and (min-width: #{$desktop-min-break}) and (max-width: #{$desktop-max-break}),
+	only screen and (                min-resolution: 192dpi) and (min-width: #{$desktop-min-break}) and (max-width: #{$desktop-max-break}),
+	only screen and (                min-resolution: 2dppx)  and (min-width: #{$desktop-min-break}) and (max-width: #{$desktop-max-break}) { 
+	  @content;
+	}
+}
+
+/**
+@mixin display
+Sets content for display screen widths.
+Usage: @include display { attribute: value }
+**/
+@mixin display {
+	@media only screen and (min-width: #{$display-min-break}) {
+		@content;
+	}
+}
+
+/**
+@mixin display-retina
+Sets content for display retina screen widths.
+Usage: @include display-retina { attribute: value }
+**/
+@mixin display-retina {
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: #{$display-min-break}),
+	only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: #{$display-min-break}),
+	only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: #{$display-min-break}),
+	only screen and (        min-device-pixel-ratio: 2)      and (min-width: #{$display-min-break}),
+	only screen and (                min-resolution: 192dpi) and (min-width: #{$display-min-break}),
+	only screen and (                min-resolution: 2dppx)  and (min-width: #{$display-min-break}) { 
+	  @content;
+	}
+}
+
+/**
+@mixin vendor
+Easily apply styles and adding vendor prefixes will be added with ease.
+@param name - css property
+@param arg - css values 
+Usage: @include vendor(border-radius, 4px);
+**/
+@mixin vendor($name, $arg) {
+	-webkit-#{$name}: $arg;
+	-ms-#{$name}: $arg;
+	-moz-#{$name}: $arg;
+	-o-#{$name}: $arg;
+	-khtml-#{$name}: $arg;
+	#{$name}: $arg;
+}
+
+/**
+@mixin keyframes
+Add keyframes to any element and it will include all the prefixes.
+@param name - name of animation
+Usage: 
+	@include keyframes(example) {
+		0% {opacity: 0}
+		100% {opacity:1} 
+	} 
+**/
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {@content; }
+	@-moz-keyframes #{$name} {@content;}
+	@-ms-keyframes #{$name} {@content;}
+	@keyframes #{$name} {@content;} 
+}
+
+/* Text OverFlow */
+@mixin text-truncate {
+	overflow: hidden;
+	@include vendor(text-overflow, ellipsis);
+	white-space: nowrap;
+}
+
+/* Clear Elements */
+@mixin clearfix() {
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+		*zoom:1;
+	}
+}
+
+/**
+@mixin opacity
+Sets opacity to element with vendor prefixes.
+@param decimal - decimal point for opacity
+Usage: @include opacity(.5);
+**/
+@mixin opacity($decimal:1){
+	$percent: $decimal * 100;
+	@include vendor(opacity, $decimal);
+	filter:alpha(opacity= $percent );
+	-ms-filter:"alpha(opacity=$percent)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$decimal);
+}
+
+/**
+@mixin navigation-list
+Creates navigation layout with li elements
+@param $space - px value in margin-right
+Usage: @include navigation-list(12px);
+**/
+@mixin navigation-list($space: 0px) {
+	padding:0;
+	margin:0;
+
+    > li{
+        display:block;
+		list-style-type:none;		
+        float:left;
+		margin-right:px2em($space);
+        &:last-child{
+            margin-right:0;
+        }
+    } 
+}
+
+/**
+@mixin box-sizing
+Applying box model
+@param box-model - box module value
+Usage: @include box-sizing(border-box);
+**/
+@mixin box-sizing($box-model) {
+	@include vendor(box-sizing, $box-model);
+}
+
+/* mixin to use in simple transition */
+@mixin csstrans($which: all, $s: .3s, $easing: linear) {
+	@include transition-property($which);
+	@include transition-duration($s);
+	@include transition-timing-function($easing);
+}
+

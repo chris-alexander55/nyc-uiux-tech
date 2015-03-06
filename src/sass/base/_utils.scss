@@ -1,0 +1,15 @@
+/*
+* _utils
+*/
+
+.hide {
+	display: none;
+}
+.show {
+	display: '';
+}
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}

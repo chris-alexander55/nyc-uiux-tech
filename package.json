@@ -1,0 +1,56 @@
+{
+  "name": "uiuxtech.nyc",
+  "version": "0.1.0",
+  "description": "Web site for the NYC UI/UX Tech Group",
+  "private": "true",
+  "homepage": "http://www.uiuxtech.nyc/",
+  "main": "gulp.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisalexander55/nyc-uiux-tech.git"
+  },
+  "keywords": [
+    "uiux",
+    "uiux tech",
+    "nyc uiux tech"
+  ],
+  "author": "Chris Alexander",
+  "email": "git@uiuxtech.nyc",
+  "license": {
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/MIT"
+  },
+  "bugs": {
+    "url": "https://github.com/chrisalexander55/nyc-uiux-tech/issues"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.11",
+    "gulp-watch": "~4.1.1",
+    "gulp-sourcemaps": "~1.3.0",
+    "vinyl-buffer": "~1.0.0",
+    "vinyl-source-stream": "~1.0.0",
+    "watchify": "~2.4.0",
+    "jshint-stylish": "~1.0.0",
+    "browserify": "~9.0.3",
+    "gulp-load-plugins": "~0.8.1",
+    "browser-sync": "~2.2.1",
+    "gulp-jshint": "~1.9.2",
+    "gulp-sass": "~1.3.3",
+    "run-sequence": "~1.0.2",
+    "lodash": "~3.3.1",
+    "del": "~1.1.1",
+    "gulp-rename": "~1.2.0",
+    "gulp-plumber": "~0.6.6",
+    "gulp-util": "~3.0.4"
+  },
+  "dependencies": {
+    "modernizr": "~3.0.0-alpha",
+    "jquery": "~2.1.3"
+  }
+}

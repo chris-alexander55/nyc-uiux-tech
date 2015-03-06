@@ -1,0 +1,83 @@
+/*
+* _layout
+*/
+
+html, body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+/** 
+Left to right support
+**/
+html.ltr { 
+	direction: ltr;
+}
+
+/** 
+Right to left support
+**/
+html.rtl { 
+	direction: rtl;
+}
+
+body {
+	@include mobile {
+		@include bp-hint('mobile');
+	}
+	@include mobile-retina {
+		@include bp-hint('mobile-retina');
+	}
+	@include tablet {
+		@include bp-hint('tablet');
+	}
+	@include tablet-retina {
+		@include bp-hint('tablet-retina');
+	}
+	@include desktop {
+		@include bp-hint('desktop');
+	}
+	@include desktop-retina {
+		@include bp-hint('desktop-retina');
+	}
+	@include display {
+		@include bp-hint('display');
+	}
+	@include display-retina {
+		@include bp-hint('display-retina');
+	}
+}
+
+.content-wrapper {
+	padding: 0;
+	margin: 0 auto;
+}
+
+.content {
+	
+}
+
+.skyblue-bkgd {
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #3D9DEB),
+		color-stop(1, #FDFEFE)
+	);
+	background-image: -o-linear-gradient(bottom, #3D9DEB 0%, #FDFEFE 100%);
+	background-image: -moz-linear-gradient(bottom, #3D9DEB 0%, #FDFEFE 100%);
+	background-image: -webkit-linear-gradient(bottom, #3D9DEB 0%, #FDFEFE 100%);
+	background-image: -ms-linear-gradient(bottom, #3D9DEB 0%, #FDFEFE 100%);
+	background-image: linear-gradient(to bottom, #3D9DEB 0%, #FDFEFE 100%);
+}
+.grey-bkgd {
+	background-color: $grey-bkgd-color;
+}
+	
+.content-buffer {
+	padding: px2em(40px);
+}
