@@ -50,16 +50,39 @@ body {
 		@include bp-hint('display-retina');
 	}
 }
-
 .content-wrapper {
 	padding: 0;
 	margin: 0 auto;
 }
-
 .content {
 	
 }
-
+.content-buffer {
+	@include mobile {
+		
+	}
+	@include mobile-retina {
+		
+	}
+	@include tablet {
+		
+	}
+	@include tablet-retina {
+		
+	}
+	@include desktop {
+		padding: px2em(40px);
+	}
+	@include desktop-retina {
+		
+	}
+	@include display {
+		
+	}
+	@include display-retina {
+		
+	}
+}
 .skyblue-bkgd {
 	background-image: -webkit-gradient(
 		linear,
@@ -76,8 +99,4 @@ body {
 }
 .grey-bkgd {
 	background-color: $grey-bkgd-color;
-}
-	
-.content-buffer {
-	padding: px2em(40px);
 }
